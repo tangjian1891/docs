@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>你好啊</title>
+    <meta name="description" content="A VitePress site">
+    <link rel="stylesheet" href="/assets/style.c3210e46.css">
+    <link rel="modulepreload" href="/assets/app.e08cfa65.js">
+    <link rel="modulepreload" href="/assets/算法_两数之和.md.d2102b5c.lean.js">
+    
+    <meta name="twitter:title" content="你好啊">
+  <meta property="og:title" content="你好啊">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme"><header class="nav-bar" data-v-675d8756><div class="sidebar-button" data-v-675d8756><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/" aria-label="你好啊, back to home" data-v-675d8756 data-v-cc01ef16><!----> 你好啊</a><div class="flex-grow" data-v-675d8756></div><div class="nav" data-v-675d8756><nav class="nav-links" data-v-675d8756 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/" data-v-b8818f8c>home <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item active" href="/算法/" data-v-b8818f8c>算法 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/设计模式/" data-v-b8818f8c>设计模式 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/手写实现/" data-v-b8818f8c>手写实现 <!----></a></div></div><!--]--><!----><!----></nav></div><!--[--><!--]--></header><aside class="sidebar" data-v-83e92a68><nav class="nav-links nav" data-v-83e92a68 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/" data-v-b8818f8c>home <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item active" href="/算法/" data-v-b8818f8c>算法 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/设计模式/" data-v-b8818f8c>设计模式 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/手写实现/" data-v-b8818f8c>手写实现 <!----></a></div></div><!--]--><!----><!----></nav><!--[--><!--]--><ul class="sidebar-links" data-v-83e92a68><!--[--><li class="sidebar-link"><a class="sidebar-link-item" href="/算法/排序">排序</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item active" href="/算法/两数之和">两数之和</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/算法/斐波那契">斐波那契</a><!----></li><!--]--></ul><!--[--><!--]--></aside><div class="sidebar-mask"></div><main class="page" data-v-7eddb2c4><div class="container" data-v-7eddb2c4><!--[--><!--]--><div style="position:relative;" class="content" data-v-7eddb2c4><div><p>两数之和:给定一个数组，找到数组中两数之和符合，并返回他们的数组下标</p><blockquote><p>给定nums=[3,23,2,55,8] target 11,那么返回[0,4]</p></blockquote><blockquote><p>简单解法:双层for循环，暴力查找</p></blockquote><div class="language-"><pre><code>let arr = [3, 23, 2, 55, 8];
+let len = arr.length;
+// 两层循环，直接求和
+function foo(target) {
+  for (let index = 0; index &lt; len; index++) {
+    for (let j = index + 1; j &lt; len; j++) {
+      if (arr[index] + arr[j] == target) {
+        return [index, j];
+      }
+    }
+  }
+}
+
+console.log(foo(11));
+</code></pre></div><blockquote><p>使用链表</p></blockquote><div class="language-"><pre><code>let arr = [3, 23, 2, 55, 8];
+let len = arr.length;
+// 两层循环，直接求和
+function foo(target) {
+  let map = {}; // {needValue:currentIndex}
+  for (let i = 0; i &lt; len; i++) {
+    let currentValue = arr[i];
+    let needValue = target - currentValue;
+    if (map[currentValue] !== undefined) {
+      return [map[currentValue], i];
+    } else {
+      map[needValue] = i;
+    }
+  }
+}
+console.log(foo(11));
+
+</code></pre></div></div></div><footer class="page-footer" data-v-7eddb2c4 data-v-07c132fc><div class="edit" data-v-07c132fc><div class="edit-link" data-v-07c132fc data-v-1ed99556><!----></div></div><div class="updated" data-v-07c132fc><!----></div></footer><div class="next-and-prev-link" data-v-7eddb2c4 data-v-38ede35f><div class="container" data-v-38ede35f><div class="prev" data-v-38ede35f><a class="link" href="/算法/排序" data-v-38ede35f><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon icon-prev" data-v-38ede35f><path d="M19,11H7.4l5.3-5.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-7,7c-0.1,0.1-0.2,0.2-0.2,0.3c-0.1,0.2-0.1,0.5,0,0.8c0.1,0.1,0.1,0.2,0.2,0.3l7,7c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L7.4,13H19c0.6,0,1-0.4,1-1S19.6,11,19,11z"></path></svg><span class="text" data-v-38ede35f>排序</span></a></div><div class="next" data-v-38ede35f><a class="link" href="/算法/斐波那契" data-v-38ede35f><span class="text" data-v-38ede35f>斐波那契</span><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon icon-next" data-v-38ede35f><path d="M19.9,12.4c0.1-0.2,0.1-0.5,0-0.8c-0.1-0.1-0.1-0.2-0.2-0.3l-7-7c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l5.3,5.3H5c-0.6,0-1,0.4-1,1s0.4,1,1,1h11.6l-5.3,5.3c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l7-7C19.8,12.6,19.9,12.5,19.9,12.4z"></path></svg></a></div></div></div><!--[--><!--]--></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"index.md\":\"372b4546\",\"手写实现_call-apply-bind.md\":\"ec4fd2dc\",\"手写实现_index.md\":\"7c0fb7f9\",\"手写实现_promise.md\":\"cf75370f\",\"算法_index.md\":\"dadc6fd4\",\"算法_两数之和.md\":\"d2102b5c\",\"算法_排序.md\":\"dda405d9\",\"算法_斐波那契.md\":\"0f38bc8a\",\"设计模式_index.md\":\"f0840d4d\",\"设计模式_发布-订阅.md\":\"ca10f2d9\"}")</script>
+    <script type="module" async src="/assets/app.e08cfa65.js"></script>
+    
+  </body>
+</html>
