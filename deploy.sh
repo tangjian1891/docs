@@ -6,6 +6,7 @@ npm i
 # build
 npm run build
 echo "这样执行"
+cd .vitepress
 echo ${pwd}
 softfiles=$(ls ${pwd})
 for sfile in ${softfiles}
