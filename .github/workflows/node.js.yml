@@ -5,13 +5,12 @@ name: EASY CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,24 +19,23 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: ok
-      run: npm i
-           npm run build
-           cp -r -f .vitepress/dist dist
-    - name: publish
-      uses: stefanzweifel/git-auto-commit-action@v4 
-      with: 
-        commit_message: Automated Change    
-        branch: master
-        repository: .
-        commit_user_name: tangjian
-        commit_user_email: tangjian1891@163.com
-    - run: npm ci 
-    - run: npm run build --if-present 
-    - run: npm test
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - name: ok
+        run: npm i
+          npm run build
+      - name: publish
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automated Change
+          branch: master
+          repository: .
+          commit_user_name: tangjian
+          commit_user_email: tangjian1891@163.com
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
