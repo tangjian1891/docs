@@ -28,12 +28,12 @@ jobs:
       - name: npm install, build
         run: |
           npm install
-          npm run build --if-present
+          npm run build
           echo "I am zhangshaoyu  优势在我" ${{ secrets.GIT_KEY }}
+          cd .vitepress
           echo $(pwd)
-          cd src
-          echo $(pwd)
-          git status
+          echo $(ll)
         env:
          CI: true
   
+# echo $(pwd)   /home/runner/work/docs/docs
