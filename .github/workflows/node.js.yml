@@ -33,6 +33,7 @@ jobs:
           echo $(pwd)
           cd src
           echo $(pwd)
+          git status
         env:
          CI: true
   
