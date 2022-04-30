@@ -25,17 +25,23 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - name: npm install, build
-        run: |
-          npm i &&  npm run build
-          echo "这样执行"
-          git config --global user.email "tangjian1891@163.com"
-          git config --global user.name "tangjian1891"
-          git add ./
-          git push https://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@github.com/tangjian1891/docs.git
+      - name: Install dependencies  # 第二步，安装依赖
+        run: npm install
+
+      - name: Build                 # 第三步，打包代码
+        run: npm run build --if-present
+      - name: 开始推送
+        uses: github-actions-x/commit@v2.9
+        with:
+          github-token: ${{ secrets.GIT_KEY }}
+          push-branch: 'master'
+          commit-message: 'publish'
+          files: ./
+          email: tangjian1891@163.com
+          name: tangjian
+          
         env:
          CI: true
-         GITHUB_TOKEN: ${{ secrets.GIT_KEY }}
          
   
 # echo $(pwd)   /home/runner/work/docs/docs
