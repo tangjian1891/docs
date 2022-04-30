@@ -329,9 +329,9 @@
   "resolved" "https://registry.npmmirror.com/csstype/-/csstype-3.0.11.tgz"
   "version" "3.0.11"
 
-"esbuild-windows-64@0.14.29":
-  "integrity" "sha512-X9cW/Wl95QjsH8WUyr3NqbmfdU72jCp71cH3pwPvI4CgBM2IeOUDdbt6oIGljPu2bf5eGDIo8K3Y3vvXCCTd8A=="
-  "resolved" "https://registry.npmmirror.com/esbuild-windows-64/-/esbuild-windows-64-0.14.29.tgz"
+"esbuild-linux-64@0.14.29":
+  "integrity" "sha512-iaEuLhssReAKE7HMwxwFJFn7D/EXEs43fFy5CJeA4DGmU6JHh0qVJD2p/UP46DvUXLRKXsXw0i+kv5TdJ1w5pg=="
+  "resolved" "https://registry.npmmirror.com/esbuild-linux-64/-/esbuild-linux-64-0.14.29.tgz"
   "version" "0.14.29"
 
 "esbuild@^0.14.14":
