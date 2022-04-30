@@ -30,15 +30,14 @@ jobs:
       run: npm i
            npm run build
            cp -r -f .vitepress/dist dist
-    - name: push
-      uses: github-actions-x/commit@v2.9
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        push-branch: 'master'
-        commit-message: 'publish'
-        force-add: 'true'
-        name: tangjian
-        email: tangjian1891@163.com
+    - name: publish
+      uses: stefanzweifel/git-auto-commit-action@v4 
+      with: 
+        commit_message: Automated Change    
+        branch: master
+        repository: .
+        commit_user_name: tangjian
+        commit_user_email: tangjian1891@163.com
     - run: npm ci 
     - run: npm run build --if-present 
     - run: npm test
