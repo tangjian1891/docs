@@ -27,14 +27,8 @@ jobs:
           cache: "npm"
       - name: npm install, build
         run: |
-          npm install
-          npm run build
+          sh deploy.sh       
           echo "I am zhangshaoyu  优势在我" ${{ secrets.GIT_KEY }}
-          cd .vitepress
-          for dir in $(ls split*)
-          do
-            [ -d $dir ] && echo $dir #先判断是否是目录，然后再输出
-          done
         env:
          CI: true
   

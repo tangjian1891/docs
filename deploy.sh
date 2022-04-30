@@ -5,6 +5,9 @@ set -e
 npm i
 # build
 npm run build
+echo "这样执行"
+echo ${pwd}
+
 
 # navigate into the build output directory
 # cd .vitepress/dist
@@ -12,12 +15,12 @@ npm run build
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
-cp -r -f .vitepress/dist dist
+#cp -r -f .vitepress/dist dist
 # git init
-git config --global user.email tangjian1891@163.com
-git config --global user.name tangjian
-git add -A
-git commit -m 'deploy'
+#git config --global user.email tangjian1891@163.com
+#git config --global user.name tangjian
+#git add -A
+#git commit -m 'deploy'
 
 
 # if you are deploying to https://<USERNAME>.github.io
