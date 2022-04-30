@@ -14,8 +14,11 @@ npm run build
 # echo 'www.example.com' > CNAME
 cp -r -f .vitepress/dist dist
 # git init
+git config --global user.email tangjian1891@163.com
+git config --global user.name tangjian
 git add -A
 git commit -m 'deploy'
+
 
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
