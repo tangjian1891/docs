@@ -21,7 +21,7 @@ git config --list
 git add ./
 git commit -m 'deploy'
 git remote -v
-#git push
+git push https://oauth2:${{secrets.GIT_KEY}}github.com/tangjian1891/docs
 
 # navigate into the build output directory
 # cd .vitepress/dist
