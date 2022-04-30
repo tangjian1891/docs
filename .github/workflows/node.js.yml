@@ -28,6 +28,10 @@ jobs:
         cache: 'npm'
     - name: ok
       run: sh deploy.sh
+    - name: Push changes
+      uses: git push -f git@github.com:tangjian1891/docs.git master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     - run: npm ci 
     - run: npm run build --if-present 
     - run: npm test
