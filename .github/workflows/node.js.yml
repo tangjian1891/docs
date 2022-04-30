@@ -25,17 +25,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - name: ok
-        run: npm i
-             npm run build
-      - name: commit
-        run: 
-          git config --global user.email tangjian1891@163.com
-          git config --global user.name tangjian
-          git add .
-          git commit -m "update" -a
-        
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: npm install, build
+        run: |
+          npm install
+          npm run build --if-present
+        env:
+         CI: true
+  
