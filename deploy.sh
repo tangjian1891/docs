@@ -21,7 +21,8 @@ git config --global user.name "tangjian1891"
 git add ./
 git commit -m 'deploy'
 git remote -v
-git push https://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/github.com/tangjian1891/docs.git
+git remote add origin https://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@github.com/tangjian1891/docs.git
+git push origin master -u
 #git push
 
 # navigate into the build output directory
