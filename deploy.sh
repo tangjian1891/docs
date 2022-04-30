@@ -8,6 +8,8 @@ npm run build
 echo "这样执行"
 cd .vitepress
 echo ${pwd}
+git --version
+echo "当前git版本" 
 softfiles=$(ls ${pwd})
 for sfile in ${softfiles}
 do 
