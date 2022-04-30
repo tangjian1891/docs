@@ -10,16 +10,18 @@ echo "这样执行"
 echo ${pwd}
 git --version
 echo "当前git版本" 
-softfiles=$(ls ${pwd})
-for sfile in ${softfiles}
-do 
-    echo "soft: ${sfile}"
-done
+# softfiles=$(ls ${pwd})
+# for sfile in ${softfiles}
+# do 
+#     echo "soft: ${sfile}"
+# done
 git config --global user.email "tangjian1891@163.com"
 git config --global user.name "tangjian"
+git config --list
 git add ./
 git commit -m 'deploy'
-git push
+git remote -v
+#git push
 
 # navigate into the build output directory
 # cd .vitepress/dist
