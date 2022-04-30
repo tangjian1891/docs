@@ -16,12 +16,13 @@ echo "当前git版本"
 #     echo "soft: ${sfile}"
 # done
 git config --global user.email "tangjian1891@163.com"
-git config --global user.name "tangjian"
+git config --global user.name "tangjian1891"
 #git config --list
 git add ./
 git commit -m 'deploy'
 git remote -v
-git push https://${{ secrets.GIT_KEY }}github.com/tangjian1891/docs.git
+#git push https://${{ secrets.GIT_KEY }}github.com/tangjian1891/docs.git
+git push
 
 # navigate into the build output directory
 # cd .vitepress/dist
