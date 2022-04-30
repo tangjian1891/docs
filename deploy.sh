@@ -6,7 +6,7 @@ npm i
 # build
 npm run build
 echo "这样执行"
-cd .vitepress
+#cd .vitepress
 echo ${pwd}
 git --version
 echo "当前git版本" 
@@ -15,6 +15,10 @@ for sfile in ${softfiles}
 do 
     echo "soft: ${sfile}"
 done
+
+git add ./
+git commit -m 'deploy'
+git push
 
 # navigate into the build output directory
 # cd .vitepress/dist
