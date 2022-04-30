@@ -36,7 +36,7 @@ jobs:
           github-token: ${{ secrets.GIT_KEY }}
           push-branch: 'master'
           commit-message: 'publish'
-          files: .vitepress/dist
+          files: ./
           email: tangjian1891@163.com
           name: tangjian1891@163.com
           
