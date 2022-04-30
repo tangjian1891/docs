@@ -7,7 +7,11 @@ npm i
 npm run build
 echo "这样执行"
 echo ${pwd}
-
+softfiles=$(ls ${pwd})
+for sfile in ${softfiles}
+do 
+    echo "soft: ${sfile}"
+done
 
 # navigate into the build output directory
 # cd .vitepress/dist
