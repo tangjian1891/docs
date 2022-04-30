@@ -15,7 +15,8 @@ for sfile in ${softfiles}
 do 
     echo "soft: ${sfile}"
 done
-
+git config --global user.email "tangjian1891@163.com"
+git config --global user.name "tangjian"
 git add ./
 git commit -m 'deploy'
 git push
