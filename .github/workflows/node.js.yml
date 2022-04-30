@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - name: npm install, build
-        run: 
+        run: |
           npm i &&  npm run build
           echo "这样执行"
           git config --global user.email "tangjian1891@163.com"
