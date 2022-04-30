@@ -27,13 +27,12 @@ jobs:
           cache: "npm"
       - name: ok
         run: npm i
-          npm run build
+             npm run build
       - name: publish
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automated Change
           branch: master
-          repository: .
           commit_user_name: tangjian
           commit_user_email: tangjian1891@163.com
       - run: npm ci
