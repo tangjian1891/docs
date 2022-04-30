@@ -17,7 +17,7 @@ echo "当前git版本"
 # done
 git config --global user.email "tangjian1891@163.com"
 git config --global user.name "tangjian"
-git config --list
+#git config --list
 git add ./
 git commit -m 'deploy'
 git remote -v
