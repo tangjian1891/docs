@@ -32,7 +32,6 @@ jobs:
           git config --global user.email "tangjian1891@163.com"
           git config --global user.name "tangjian1891"
           git add ./
-        #   https://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@github.com/tangjian1891/docs.git
           git push 
         env:
          CI: true
