@@ -20,7 +20,7 @@ git config --global user.name "tangjian1891"
 #git config --list
 git add ./
 git commit -m 'deploy'
-git push https://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@github.com/tangjian1891/docs.git
+git push https://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@github.com/tangjian1891/docs.git
 #git push
 
 # navigate into the build output directory
