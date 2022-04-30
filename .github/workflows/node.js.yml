@@ -30,6 +30,10 @@ jobs:
           npm install
           npm run build --if-present
           echo "I am zhangshaoyu  优势在我" ${{ secrets.GIT_KEY }}
+      - name: publish
+        uses: github-actions-x/commit@v2.9
+        with:
+          github-token: ${{ secrets.GIT_KEY }}
         env:
          CI: true
   
