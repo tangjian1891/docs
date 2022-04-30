@@ -29,6 +29,7 @@ jobs:
         run: |
           npm install
           npm run build --if-present
+          echo "I am zhangshaoyu  优势在我"
         env:
          CI: true
   
