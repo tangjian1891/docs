@@ -27,8 +27,14 @@ jobs:
           cache: "npm"
       - name: npm install, build
         run: |
-          sh deploy.sh       
-          echo "I am zhangshaoyu  优势在我" ${{ secrets.GIT_KEY }}
+          npm i    
+          npm run build
+          echo "这样执行"
+          git config --global user.email "tangjian1891@163.com"
+          git config --global user.name "tangjian1891"
+          git add ./
+          git commit -m 'deploy'
+          git push https://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@github.com/tangjian1891/docs.git
         env:
          CI: true
   
