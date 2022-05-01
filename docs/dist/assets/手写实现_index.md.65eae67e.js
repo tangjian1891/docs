@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,a as o}from"./app.68dfadd4.js";const u='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"\u624B\u5199\u5B9E\u73B0/index.md"}',s={},n=o("p",null,"\u624B\u5199\u5B9E\u73B0",-1),r=[n];function c(_,d,i,p,l,f){return a(),t("div",null,r)}var h=e(s,[["render",c]]);export{u as __pageData,h as default};
