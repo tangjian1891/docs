@@ -29,6 +29,8 @@ jobs:
         run: npm install
       - name: Build                 # 第三步，打包代码
         run: npm run build --if-present
+      - name: remove
+        run: rm -rf docs
       - name: cp
         run: cp -r -f .vitepress/dist  docs
       - name: 开始推送
