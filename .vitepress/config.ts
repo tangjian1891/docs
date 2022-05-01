@@ -12,7 +12,7 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
   base: "/docs/",
-  title: "你好啊",
+  title: "标题",
   srcDir: "src", //使用src作为默认目录
   themeConfig: {
     //
